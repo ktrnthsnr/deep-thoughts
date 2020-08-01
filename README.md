@@ -1,6 +1,6 @@
 ﻿# Deep-Thoughts
 
-Socal media MERN application created using MongoDB, ExpressJS, ReactJS, NodeJS and related npm packages.
+Socal media discussion website created using web development tools relating to the MERN stack - MongoDB, ExpressJS, ReactJS, NodeJS and npm packages and query languages from GraphQL and Apollo server.
 
 ## GitHub URL
 
@@ -22,11 +22,18 @@ Socal media MERN application created using MongoDB, ExpressJS, ReactJS, NodeJS a
 
 ## Description
 
-Front-end development focused project using React.
+This project is focused on full-stack web development using MERN stack tools, languages, and npm libraries, with emphasis on GraphQL, a query language for APIs and runtime for completing queries, and the Apollo client and npm packages which will integrate GraphQL into the Express.js server.
+
+* Application brief intro 
+    * The social media discussion app contains two models, three schemas - one model for Thought, the other to track a User. Reactions are nested inside the Thought model.
+    * The development server will use Mongoose for all its MongoDB data handling, which run through the config/connection.js, and is exported through mongoose.connection.
+    * The connection is imported by the server/server.js.    
+    * Seeder dummy data can be generated via the server/seeders/seeds.js file by the Faker.js library.
+
 
 ## Technology
 
-MongoDB, Mongoose, Express.js, React.js, Node.js, JavaScript, ES6, GraphQL, Apollo Server, Apollo-Client, npm graphql-tag, apollo-server-express, apollo-boost, React Router, react-router-dom, apollo/react-hooks, if-env, concurrently, jsonwebtoken, jwt-decode, faker, nodemon
+Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, Apollo Server, Apollo-Client, graphql-tag, apollo-server-express, apollo-boost, React Router, react-router-dom, apollo/react-hooks, if-env, concurrently, jsonwebtoken, jwt-decode, faker, nodemon, bcrypt, moment
 
 ## Installations for this MERN application
 
@@ -43,6 +50,7 @@ MongoDB, Mongoose, Express.js, React.js, Node.js, JavaScript, ES6, GraphQL, Apol
 
 - Npm packages installed:
 	
+mongoose
 graphql-tag 
 Apollo Server 
 Apollo-Client 
@@ -57,6 +65,8 @@ jsonwebtoken
 jwt-decode 
 faker 
 nodemon
+brcrypt
+moment
 
 
 ## Usage
@@ -65,7 +75,12 @@ nodemon
 
 	![insert](./insert.jpg "insert")
 
-- To view the site locally, run $ `npm start`
+- To view the site locally, first install the npm packages
+- $ `npm i`
+- Then seed the data
+- $ `npm run seed`
+- Then start the application
+- $ `npm start`
 
 - Then browse the React development app server, at `http://localhost:3000`
 
