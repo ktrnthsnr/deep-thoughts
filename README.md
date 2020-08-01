@@ -26,7 +26,7 @@ Front-end development focused project using React.
 
 ## Technology
 
-MongoDB, Express.js, React.js, Node.js, JavaScript, ES6, GraphQL, npm graphql-tag, Apollo Server, Apollo-Client, apollo-server-express, apollo-boost, React Router, react-router-dom, apollo/react-hooks, if-env, concurrently, jsonwebtoken, jwt-decode, faker, nodemon
+MongoDB, Mongoose, Express.js, React.js, Node.js, JavaScript, ES6, GraphQL, Apollo Server, Apollo-Client, npm graphql-tag, apollo-server-express, apollo-boost, React Router, react-router-dom, apollo/react-hooks, if-env, concurrently, jsonwebtoken, jwt-decode, faker, nodemon
 
 ## Installations for this MERN application
 
