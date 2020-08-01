@@ -79,6 +79,8 @@ moment
 - $ `npm i`
 - Then seed the data
 - $ `npm run seed`
+- Start the MongoDB
+- $ `mongod`
 - Then start the application
 - $ `npm start`
 
