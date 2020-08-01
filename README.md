@@ -31,7 +31,7 @@ This project is focused on full-stack web development using MERN stack tools, la
     * Seeder dummy data can be generated via the server/seeders/seeds.js file by the Faker.js library.
     * To access the GraphQL API, schemas were created. Located under server/schemas, this location contains the type definitions (queries) and resolvers (response) which the QueryQl API accesses to perform the CRUD (create, read, update, delete) operations.
     * The Apollo server is connected to the Express.js server, as defined in the server/server.js.
-    * QueryQL queries can be run in the QueryQL Playground. See Usage section below for more info.
+    * QueryQL queries can be run in the QueryQL Playground. See the `Usage` section below for more info on starting the nodemon server, quering the db, and viewing the results in the localhost.
 
 
 ## Technology
