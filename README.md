@@ -31,7 +31,7 @@ This project is focused on full-stack web development using MERN stack tools, la
     * Seeder dummy data can be generated via the server/seeders/seeds.js file by the Faker.js library.
     * To access the GraphQL API, schemas were created. Located under server/schemas, this location contains the type definitions (queries) and resolvers (response) which the QueryQl API accesses to perform the CRUD (create, read, update, delete) operations.
     * The Apollo server is connected to the Express.js server, as defined in the server/server.js.
-    * 
+    * QueryQL queries can be run in the QueryQL Playground. See Usage section below for more info.
 
 
 ## Technology
@@ -91,8 +91,9 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - To test the Apollo server connecting to the Express.js, (to test the schemas and server.js), run the following 
 - $ `cd server`
 - $ `npm run watch`
-- This allows for file changes without having to restart the server. The config is setup in the package.json to run nodeman, "watch": "nodemon".
+- This allows for file changes without having to restart the server. The config is setup in the package.json to run nsodeman, "watch": "nodemon".
 - Use GraphQL Playground locally at `http://localhost:3001/graphql`
+- Sample queries can be copied from the GraphqlPlayground-queries.md. 
 
 - To start the application on localhost port 3001, run in the bash terminal
 - $ `npm start`
