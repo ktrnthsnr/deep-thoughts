@@ -165,4 +165,68 @@ mutation addUser($username: String!, $password: String!, $email: String!) {
       "email": "test2@test.com"
     }
 
----------------------------------------------------------------------------
+
+
+------------------------ mutation addReacion --------------------------------
+
+mutation addReaction($thoughtId: ID!, $reactionBody: String!) {
+  addReaction(thoughtId: $thoughtId, reactionBody: $reactionBody) {
+    _id
+    reactionCount
+    reactions {
+      _id
+      reactionBody
+      createdAt
+      username
+    }
+  }
+}
+      --- add your db ID to the sample Query Variable JSON
+        {
+          "thoughtId": "5ed7f1e96764053f245e9e92",
+          "reactionBody": "I agree!"
+        }
+
+
+                  --- sample output
+
+                  {
+                    "data": {
+                      "addReaction": {
+                        "_id": "5ed7f1e96764053f245e9e92",
+                        "reactionCount": 1,
+                        "reactions": [
+                          {
+                            "_id": "5ed7f71f6764053f245e9e93",
+                            "reactionBody": "I agree!",
+                            "createdAt": "Jun 3rd, 2020 at 12:16 pm",
+                            "username": "tester2"
+                          }
+                        ]
+                      }
+                    }
+                  }
+
+---------------------------addFriend mutation test ------------------------------------
+
+mutation addFriend($friendId: ID!) {
+  addFriend(friendId: $friendId) {
+    _id
+    username
+    friendCount
+    friends {
+      _id
+      username
+    }
+  }
+}
+
+       -- Query Variable (thoughtId value should be from your own database..)
+        query {
+          users {
+            _id
+            username
+          }
+        }
+
+--------------------------------------------------------------------------------
