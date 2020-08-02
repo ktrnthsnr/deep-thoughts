@@ -25,13 +25,15 @@ Socal media discussion website created using web development tools relating to t
 This project is focused on full-stack web development using MERN stack tools, languages, and npm libraries, with emphasis on GraphQL, a query language for APIs and runtime for completing queries, and the Apollo client and npm packages which will integrate GraphQL into the Express.js server.
 
 * QueryQL application brief intro 
-    * The social media discussion app contains two models under server/models/* - one model for Thought, the other to track a User. Reactions are nested inside the Thought model.
+    * On the server side, the social media discussion app contains two models under server/models/* - one model for Thought, the other to track a User. Reactions are nested inside the Thought model.
     * The development server will use Mongoose for all its MongoDB data handling, which run through the server/config/connection.js, and is exported through mongoose.connection.
     * The connection is imported by the server/server.js.    
     * Seeder dummy data can be generated via the server/seeders/seeds.js file by the Faker.js library.
     * To access the GraphQL API, schemas were created. Located under server/schemas, this location contains the type definitions (queries) and resolvers (response) which the QueryQl API accesses to perform the CRUD (create, read, update, delete) operations.
     * The Apollo server is connected to the Express.js server, as defined in the server/server.js.
     * QueryQL queries can be run in the QueryQL Playground. See the `Usage` section below for more info on starting the nodemon server, quering the db, and viewing the results in the localhost.
+
+    * On the client side, the initial structure of the frontend is built by the Create React App tool, created by running `npx create-react-app client`
 
 
 ## Technology
@@ -41,64 +43,74 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 ## Installations for this MERN application
 
 - Prereq: install VSCode, Node.js, and MongoDB
-
 - After cloning the GitHub repo to your local drive, run the following in the VSCode command-line terminal
 - Install all components listed within the package.json file for npm
-    - $ `npm i`
+    - Server 
+    - $ `cd server`
+    - $ `npm i`
+     - Client
+    - $ `cd client`
+    - $ `npm i`
 
-- Otherwise, for custom individual component installations, start by initializing npm and creating a new package.json
-    - $ `npm init --y` or $ `npm install`
-    - Create a .gitignore file in the root and add `node_modules` to this file
-    - If you need to re-add any of the dependencies, run $ `npm install`
+- Otherwise, for custom individual component installations, install the npm packages per each server and client:
 
 - Npm packages installed under the /server folder:
+    - Under the /server folder, create a .gitignore file in the root and add `node_modules` to this file
+    - Apollo Server library
+        - $ `npm i apollo-server-express`
+    - For user authentication, to be able to encode a JSON object into a tokenized string, install JSON Web Token (JWT) package
+        - $ `npm install jsonwebtoken`
 
-- Apollo Server library
-    - $ `npm i apollo-server-express`
-- For user authentication, to be able to encode a JSON object into a tokenized string, install JSON Web Token (JWT) package
-    - $ `npm install jsonwebtoken`
+- Npm packages installed under the /client folder:
+     - Under the /client folder, create a .gitignore file in the root and add `node_modules` to this file
+     - Create React App tool, created by running in the bash terminal
+        - $ `cd client`
+        - $ `npx create-react-app client`
 
-- mongoose
-- graphql-tag 
-
-- Apollo-Client 
-- apollo-server-express 
-- apollo-boost 
-- React Router 
-- react-router-dom 
-- apollo/react-hooks 
-- if-env 
-- concurrently 
-- jsonwebtoken 
-- jwt-decode 
-- faker 
-- nodemon
-- brcrypt
-- moment
-
+- Other npm installations:
+        - mongoose
+        - graphql-tag 
+        - Apollo-Client 
+        - apollo-boost 
+        - React Router 
+        - react-router-dom 
+        - apollo/react-hooks 
+        - if-env 
+        - concurrently 
+        - jsonwebtoken 
+        - jwt-decode 
+        - faker 
+        - nodemon
+        - brcrypt
+        - moment
 
 ## Usage
+
 
 ### Website
 - The website for this website has been deployed to GitHub.
 	![insert](./insert.jpg "insert")
 
-### Local install and usage
-- To view the site locally, first install the npm packages
+### Local install and usage 
+
+#### Server-side
+
+- To view the site locally on the development server, first install the npm packages
 - $ `npm i`
 - Then seed the data
 - $ `npm run seed`
 - Start the MongoDB
 - $ `mongod`
-- To test the Apollo server connecting to the Express.js, (to test the schemas and server.js), run the following 
+- To test the Apollo server sider connections to the Express.js, (to test the schemas and server.js), run the following 
 - $ `cd server`
 - $ `npm run watch`
-- This allows for file changes without having to restart the server. The config is setup in the package.json to run nsodeman, "watch": "nodemon".
+- This allows for queries and any file changes without having to restart the server. The config is setup in the package.json to run nsodeman, "watch": "nodemon".
 - Use GraphQL Playground locally at `http://localhost:3001/graphql`
-- Sample queries can be copied from the GraphqlPlayground-queries.md. 
+- Sample queries can be copied to GraphQL Playground from the ./GraphqlPlayground-queries.md. 
 
-- To start the application on localhost port 3001, run in the bash terminal
-- $ `npm start`
+#### Client-side
+
+
 
 
 
