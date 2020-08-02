@@ -51,10 +51,12 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - Create a .gitignore file in the root and add `node_modules` to this file
     - If you need to re-add any of the dependencies, run $ `npm install`
 
-- Npm packages installed:
+- Npm packages installed under the /server folder:
 
 - Apollo Server library
     - $ `npm i apollo-server-express`
+- For user authentication, to be able to encode a JSON object into a tokenized string, install JSON Web Token (JWT) package
+    - $ `npm install jsonwebtoken`
 
 - mongoose
 - graphql-tag 

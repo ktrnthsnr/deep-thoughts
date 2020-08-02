@@ -1,6 +1,7 @@
 // import User and Thought models
 const { User, Thought } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
@@ -40,6 +41,7 @@ const resolvers = {
     Mutation: {
       addUser: async (parent, args) => {
         const user = await User.create(args);
+        const token = signToken(user);
       
         return user;
       },
@@ -55,7 +57,8 @@ const resolvers = {
         if (!correctPw) {
           throw new AuthenticationError('Incorrect credentials');
         }
-      
+        
+        const token = signToken(user);
         return user;
       }
     }
