@@ -88,15 +88,23 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 
 ### Website
-- The website for this website has been deployed to GitHub.
+- The website has been deployed to GitHub.
 	![insert](./insert.jpg "insert")
 
 ### Local install and usage 
 
+#### Client-side
+- If cloning to your local drive, install the npm packages before running
+- $ `cd client`
+- $ `npm i` or `npm install`
+- The React app client starts up by rushing from the root the following,
+- $ `cd client`
+- $ `npm start`
+
 #### Server-side
 
 - To view the site locally on the development server, first install the npm packages
-- $ `npm i`
+- $ `npm i` or `npm install`
 - Then seed the data
 - $ `npm run seed`
 - Start the MongoDB
@@ -107,11 +115,6 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - This allows for queries and any file changes without having to restart the server. The config is setup in the package.json to run nsodeman, "watch": "nodemon".
 - Use GraphQL Playground locally at `http://localhost:3001/graphql`
 - Sample queries can be copied to GraphQL Playground from the ./GraphqlPlayground-queries.md. 
-
-#### Client-side
-
-
-
 
 
 ## Testing
