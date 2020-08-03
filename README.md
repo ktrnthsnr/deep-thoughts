@@ -94,29 +94,29 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 ### Local install, seed and usage 
 
-#### Client-side
-- If cloning to your local drive, install the npm packages before running
-- $ `cd client`
-- $ `npm i` or `npm install`
-- The React app client starts up by rushing from the root the following,
-- $ `cd client`
-- $ `npm start`
-
 #### Server-side
 
 - To view the site locally on the development server, first install the npm packages
-- $ `npm i` or `npm install`
+    - $ `npm i` or `npm install`
 - Then seed the data
-- $ `npm run seed`
+    - $ `npm run seed`
 - Start the MongoDB
-- $ `mongod`
+    - $ `mongod`
 - To test the Apollo server sider connections to the Express.js, (to test the schemas and server.js), run the following 
-- $ `cd server`
-- $ `npm run watch`
+    - $ `cd server`
+    - $ `npm run watch`
 - This allows for queries and any file changes without having to restart the server. The config is setup in the package.json to run nsodeman, "watch": "nodemon".
 - Use GraphQL Playground locally at `http://localhost:3001/graphql`
 - Sample queries can be copied to GraphQL Playground from the ./GraphqlPlayground-queries.md. 
 
+#### Client-side
+- If cloning to your local drive, install the npm packages 
+    - $ `cd client`
+    - $ `npm i` or `npm install`
+- Then start up the app. The React app client starts up by running from the client directory
+    - $ `cd client`
+    - $ `npm start`
+- The default browser will open your localhost, `http://localhost:3000/`
 
 ## Testing
 
