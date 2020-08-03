@@ -63,9 +63,10 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 - Npm packages installed under the /client folder:
      - Under the /client folder, create a .gitignore file in the root and add `node_modules` to this file
-     - Create React App tool, created by running in the bash terminal
+     - Create the React App tool if cloned the repo, by running in the bash terminal
         - $ `cd client`
-        - $ `npx create-react-app client`
+        - $ `npx create-react-app .` 
+        - (New installs without repo cloning, run $ `npx create-react-app client`)
 
 - Other npm installations:
         - mongoose
@@ -91,7 +92,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - The website has been deployed to GitHub.
 	![insert](./insert.jpg "insert")
 
-### Local install and usage 
+### Local install, seed and usage 
 
 #### Client-side
 - If cloning to your local drive, install the npm packages before running
