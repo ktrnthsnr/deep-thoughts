@@ -115,7 +115,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - $ `cd server`
     - $ `npm run watch`
 - This allows for queries and any file changes without having to restart the server. The config is setup in the package.json to run nsodeman, "watch": "nodemon".
-- Use GraphQL Playground locally at `http://localhost:3001/graphql`
+- Use GraphQL Playground server environment, view locally at `http://localhost:3001/graphql`
 - Sample queries can be copied to GraphQL Playground from the ./GraphqlPlayground-queries.md. 
 
 - Here are the server side dependencies as seen under /server/package.json
@@ -140,7 +140,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - Then start up the app. The React app client starts up by running from the client directory
     - $ `cd client`
     - $ `npm start`
-- The default browser will open your localhost, `http://localhost:3000/`
+- The default browser in your React environment, `http://localhost:3000/`
 
 - Here are the client side dependencies as seen under /client/package.json
 
