@@ -40,7 +40,7 @@ This project is focused on full-stack web development using MERN stack tools, la
 
 Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, GraphQL Playground, Apollo Server, Apollo-Client, graphql-tag, apollo-server-express, apollo-boost, React Router, react-router-dom, apollo/react-hooks, if-env, concurrently, jsonwebtoken, jwt-decode, faker, nodemon, bcrypt, moment
 
-## Installations for this MERN application
+## Installations
 
 - Prereq: install VSCode, Node.js, and MongoDB
 - After cloning the GitHub repo to your local drive, run the following in the VSCode command-line terminal
@@ -68,22 +68,31 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
         - $ `npx create-react-app .` 
         - (New installs without repo cloning, run $ `npx create-react-app client`)
 
-- Other npm installations:
-        - mongoose
-        - graphql-tag 
-        - Apollo-Client 
-        - apollo-boost 
-        - React Router 
-        - react-router-dom 
-        - apollo/react-hooks 
-        - if-env 
-        - concurrently 
-        - jsonwebtoken 
-        - jwt-decode 
-        - faker 
-        - nodemon
-        - brcrypt
-        - moment
+  - Installed additional dependent npm packages
+    - apollo-boost `npm i apollo-boost graphql graphql-tag @apollo/react-hooks` 
+        - This installs these, so no need to install
+            - apollo-boost
+            - graphql-tag 
+            - graphql
+            - @apollo/apollo-hooks
+
+    - jest-dom `npm install @testing-library/react @testing-library/jest-dom --save-dev`
+    - bootstrap `npm i bootstrap`
+    - popper  `npm i popper.js`
+    - jQuery `npm i jquery`
+    - jwt-decode `npm i jwt-decode`
+    - react-bootstrap `npm i react-bootstrap`
+    - react-dom `npm i react-dom`
+    - react-router-dom `npm i react-router-dom`
+    - react-scripts `npm i react-scripts`
+  - For the refactor to GraphQL and Apollo server, these packages were installed
+    - React Router `npm i react-router`
+    - nodemon `npm i nodemon`
+    - apollo/react-hooks `npm i @apollo/react-hooks`
+    - if-env `npm i if-env`
+    - concurrently `npm i concurrently`
+    - graphql-tag `npm i graphql-tag`
+    - Apollo-Client `npm i apollo client` -- (todo: redo)
 
 ## Usage
 
