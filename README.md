@@ -109,6 +109,21 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - Use GraphQL Playground locally at `http://localhost:3001/graphql`
 - Sample queries can be copied to GraphQL Playground from the ./GraphqlPlayground-queries.md. 
 
+- Here are the server side dependencies as seen under /server/package.json
+```
+"dependencies": {
+    "bcrypt": "^4.0.1",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.9"
+      }
+},
+"devDependencies": {
+    "nodemon": "^2.0.3"
+```
+
 #### Client-side
 - If cloning to your local drive, install the npm packages 
     - $ `cd client`
@@ -117,6 +132,19 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - $ `cd client`
     - $ `npm start`
 - The default browser will open your localhost, `http://localhost:3000/`
+
+- Here are the client side dependencies as seen under /client/package.json
+
+```
+"dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
+      }
+```
 
 ## Testing
 
