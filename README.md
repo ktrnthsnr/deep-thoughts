@@ -22,7 +22,7 @@ Socal media discussion website created using web development tools relating to t
 
 ## Description
 
-This project is focused on full-stack web development using MERN stack tools, languages, and npm libraries, with emphasis on GraphQL, a query language for APIs and runtime for completing queries, and the Apollo client and npm packages which will integrate GraphQL into the Express.js server.
+This project is focused on full-stack web development using MERN stack tools, languages, and npm libraries, with emphasis on GraphQL, a query language for APIs and runtime for completing queries, and the Apollo client and npm packages which will integrate GraphQL into the Express.js server. This specific repo will involve setting up the data connection between a React front-end development server and a GraphQL development server API.
 
 * QueryQL application brief intro 
     * On the server side, the social media discussion app contains two models under server/models/* - one model for Thought, the other to track a User. Reactions are nested inside the Thought model.
@@ -30,10 +30,10 @@ This project is focused on full-stack web development using MERN stack tools, la
     * The connection is imported by the server/server.js.    
     * Seeder dummy data can be generated via the server/seeders/seeds.js file by the Faker.js library.
     * To access the GraphQL API, schemas were created. Located under server/schemas, this location contains the type definitions (queries) and resolvers (response) which the QueryQl API accesses to perform the CRUD (create, read, update, delete) operations.
-    * The Apollo server is connected to the Express.js server, as defined in the server/server.js.
+    * The Apollo server is connected to the Express.js server, as defined in the server directorty under server.js.
     * QueryQL queries can be run in the QueryQL Playground. See the `Usage` section below for more info on starting the nodemon server, quering the db, and viewing the results in the localhost.
-
     * On the client side, the initial structure of the frontend is built by the Create React App tool, created by running `npx create-react-app client`
+    * To connect the client to server, the Apollo Provider and Apollo Client are imported into the App.js in the client directory, and the Apollo hooks are imported under src\pages\Home.js where the backend server can move user data to the client's components.
 
 
 ## Technology
