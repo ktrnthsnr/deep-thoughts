@@ -54,6 +54,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 - Otherwise, for custom individual component installations, install the npm packages per each server and client:
 
+### Server installations
 - Npm packages installed under the /server folder:
     - Under the /server folder, create a .gitignore file in the root and add `node_modules` to this file
     - Apollo Server library
@@ -61,6 +62,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - For user authentication, to be able to encode a JSON object into a tokenized string, install JSON Web Token (JWT) package
         - $ `npm install jsonwebtoken`
 
+### Client installations
 - Npm packages installed under the /client folder:
      - Under the /client folder, create a .gitignore file in the root and add `node_modules` to this file
      - Create the React App tool if cloned the repo, by running in the bash terminal
@@ -92,7 +94,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - if-env `npm i if-env`
     - concurrently `npm i concurrently`
     - graphql-tag `npm i graphql-tag`
-    - Apollo-Client `npm i apollo client` -- (todo: redo)
+    - Apollo-Client `npm i apollo client` --
 
 ## Usage
 
@@ -103,7 +105,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 ### Local install, seed and usage 
 
-#### Server-side
+#### Server directory - GraphQL server API
 
 - To view the site locally on the development server, first install the npm packages
     - $ `npm i` or `npm install`
@@ -114,9 +116,10 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - To test the Apollo server sider connections to the Express.js, (to test the schemas and server.js), run the following 
     - $ `cd server`
     - $ `npm run watch`
-- This allows for queries and any file changes without having to restart the server. The config is setup in the package.json to run nsodeman, "watch": "nodemon".
-- Use GraphQL Playground server environment, view locally at `http://localhost:3001/graphql`
+- Use GraphQL Playground server environment, view locally at 
+- $ `http://localhost:3001/graphql`
 - Sample queries can be copied to GraphQL Playground from the ./GraphqlPlayground-queries.md. 
+- Graphql allows for queries and any file changes without having to restart the server. The config is setup in the package.json to run nsodeman, "watch": "nodemon".
 
 - Here are the server side dependencies as seen under /server/package.json
 ```
@@ -133,7 +136,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     "nodemon": "^2.0.3"
 ```
 
-#### Client-side
+#### Client directory - React front-end development server
 - If cloning to your local drive, install the npm packages 
     - $ `cd client`
     - $ `npm i` or `npm install`
