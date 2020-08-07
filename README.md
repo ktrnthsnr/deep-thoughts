@@ -9,7 +9,6 @@ Socal media discussion website created using web development tools relating to t
 ## React Website in GitHub
 
 
-
 ## Table of Contents
 
 * [Description](#description)
