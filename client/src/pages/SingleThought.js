@@ -16,7 +16,8 @@ const SingleThought = props => {
     // const { id: thoughtId } = useParams();
     // console.log(thoughtId);
 
-  // new -- after adding throught object ( id property on the variables object will become the $id param in the GraphQL query)
+  // new -- adding thought object from utils/queries.js
+    // ( id property on the variables object will become the $id param in the GraphQL query)
     const { id: thoughtId } = useParams();
     const { loading, data } = useQuery(QUERY_THOUGHT, {
       variables: { id: thoughtId }
@@ -26,7 +27,7 @@ const SingleThought = props => {
       return <div>Loading...</div>;
     }
 
-    // new -- after adding ReactionList component & thought object
+    // new -- after adding ReactionList component & thought object above
     return (
       <div>
        <div>

@@ -19,6 +19,7 @@ export const QUERY_THOUGHTS = gql`
   }
 `;
 
+// new -- added thought query
 export const QUERY_THOUGHT = gql`
   query thought($id: ID!) {
     thought(_id: $id) {
@@ -32,6 +33,28 @@ export const QUERY_THOUGHT = gql`
         createdAt
         username
         reactionBody
+      }
+    }
+  }
+`;
+
+// new -- added user profile query, the profile.js page will import this
+export const QUERY_USER = gql`
+  query user($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      email
+      friendCount
+      friends {
+        _id
+        username
+      }
+      thoughts {
+        _id
+        thoughtText
+        createdAt
+        reactionCount
       }
     }
   }
