@@ -165,7 +165,7 @@ https://drive.google.com/file/d/1K3YQd_e1wYWERb5So4wgaccVD6zOiQZK/view
 
 ## Testing
 
-Development server is running under the server directory, React under the client directory. To test for the client, run both servers, cd to each directory, then enter `npm start` in bash.
+The development server is running under the server directory, React under the client directory. To test for the client, run both servers, cd to each directory, then enter `npm start` in bash.
 See Usage, under client or server for further information and detail.
 
 ## Contribution
