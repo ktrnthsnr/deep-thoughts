@@ -56,7 +56,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 ### Server installations
 - Npm packages installed under the /server folder:
     - Under the /server folder, create a .gitignore file in the root and add `node_modules` to this file
-    - Apollo Server library
+    - Apollo Server library 
         - $ `npm i apollo-server-express`
     - For user authentication, to be able to encode a JSON object into a tokenized string, install JSON Web Token (JWT) package
         - $ `npm install jsonwebtoken`
@@ -71,11 +71,11 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
   - Installed additional dependent npm packages
     - apollo-boost `npm i apollo-boost graphql graphql-tag @apollo/react-hooks` 
-        - This installs these, so no need to install
-            - apollo-boost
-            - graphql-tag 
+        - This installs the required packages for Apollo and GraphSQL in React on the client side:
+            - apollo-boost (for client)
+            - graphql-tag (formats GraphQL queries)
+            - @apollo/apollo-hooks (executes GraphQL queries as React Hooks)
             - graphql
-            - @apollo/apollo-hooks
 
     - jest-dom `npm install @testing-library/react @testing-library/jest-dom --save-dev`
     - bootstrap `npm i bootstrap`
@@ -97,7 +97,6 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 ## Usage
 
-
 ### Website
 - The website has been deployed to GitHub to a production environment.
 	![insert](./insert.jpg "insert")
@@ -107,7 +106,29 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 #### Localhost deployment
 
 - If cloned to your localhost, after the installations, to start the Node.js application run from the root in bash, which will start both the client and server side applications.
-  - $ `npm start`
+
+   - $ `npm start`
+
+  - Currently the environment config is setup within the server/server.js and root package.json file as follows:
+
+    - server/server.js
+    
+    ```
+    if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+    }
+    ```
+
+    - root package.json
+    ```
+    "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    ```
+    
+  - This means if not specifically  $ `npm start:prod` the command will run `npm run start:dev` will run.
 
 #### Server directory - GraphQL server API
 

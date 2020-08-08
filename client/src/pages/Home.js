@@ -5,7 +5,7 @@ import { QUERY_THOUGHTS } from '../utils/queries';
 import ThoughtList from '../components/ThoughtList';
 
 const Home = () => {
-  // use useQuery hook to make query request
+  // use useQuery hook to make GraphQL query requests
   const { loading, data } = useQuery(QUERY_THOUGHTS);
    // -- optional chaining syntax, if data exists store in the thought constant, if not store in empty array
   const thoughts = data?.thoughts || []; 
