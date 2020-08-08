@@ -6,7 +6,7 @@ Socal media discussion website created using web development tools relating to t
 
 * https://github.com/ktrnthsnr/deep-thoughts
 
-## React Website in GitHub
+## React Website in Heroku
 
 
 ## Table of Contents
@@ -104,7 +104,14 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 ### Local install, seed and usage 
 
+#### Localhost deployment
+
+- If cloned to your localhost, after the installations, to start the Node.js application run from the root in bash, which will start both the client and server side applications.
+  - $ `npm start`
+
 #### Server directory - GraphQL server API
+
+- Steps completed prior to the deployment:
 
 - To view the site locally on the development server, first install the npm packages
     - $ `npm i` or `npm install`
