@@ -32,7 +32,7 @@ This project is focused on full-stack web development using MERN stack tools, la
     * The Apollo server is connected to the Express.js server, as defined in the server directorty under server.js.
     * QueryQL queries can be run in the QueryQL Playground. See the `Usage` section below for more info on starting the nodemon server, quering the db, and viewing the results in the localhost.
     * On the client side, the initial structure of the frontend is built by the Create React App tool, created by running `npx create-react-app client`
-    * To connect the client to server, the Apollo Provider and Apollo Client are imported into the App.js in the client directory, and the Apollo hooks are imported under src\pages\Home.js where the backend server can move user data to the client's components.
+    * To connect the client to server, the Apollo Provider, Apollo Client, and pages routes are imported into and defined in the App.js in the client directory, and the Apollo hooks are imported under src\pages\Home.js where the backend server can move user data to the client's components.
 
 
 ## Technology
@@ -76,7 +76,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
             - graphql-tag (formats GraphQL queries)
             - @apollo/apollo-hooks (executes GraphQL queries as React Hooks)
             - graphql
-            
+
     - react-router-dom `npm i react-router-dom`
 
     - jest-dom `npm install @testing-library/react @testing-library/jest-dom --save-dev`
