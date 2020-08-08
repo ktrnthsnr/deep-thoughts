@@ -76,6 +76,8 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
             - graphql-tag (formats GraphQL queries)
             - @apollo/apollo-hooks (executes GraphQL queries as React Hooks)
             - graphql
+            
+    - react-router-dom `npm i react-router-dom`
 
     - jest-dom `npm install @testing-library/react @testing-library/jest-dom --save-dev`
     - bootstrap `npm i bootstrap`
@@ -84,7 +86,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     - jwt-decode `npm i jwt-decode`
     - react-bootstrap `npm i react-bootstrap`
     - react-dom `npm i react-dom`
-    - react-router-dom `npm i react-router-dom`
+
     - react-scripts `npm i react-scripts`
   - For the refactor to GraphQL and Apollo server, these packages were installed
     - React Router `npm i react-router`
