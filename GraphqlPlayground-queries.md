@@ -1,4 +1,21 @@
-# sample graphql playground queries
+# QueryQL Playground
+
+## Server directory - GraphQL server API
+
+- Note: Mongodb must be installed prior to running this application.
+
+- To view the site locally on the development server, first install the npm packages
+    - $ `npm i` or `npm install`
+- Then seed the data
+    - $ `npm run seed`
+- Start the MongoDB
+    - $ `mongod`
+- To test the Apollo server sider connections to the Express.js, (to test the schemas and server.js), run the following 
+    - $ `cd server`
+    - $ `npm run watch`
+- Use GraphQL Playground server environment, view locally at 
+- $ `http://localhost:3001/graphql`
+
 
 ---------------------------------------------------------------------------
 query {

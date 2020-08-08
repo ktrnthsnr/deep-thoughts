@@ -9,8 +9,6 @@ Socal media discussion website created using web development tools relating to t
 ## React Website in GitHub
 
 
-
-
 ## Table of Contents
 
 * [Description](#description)
@@ -144,7 +142,13 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - Then start up the app. The React app client starts up by running from the client directory
     - $ `cd client`
     - $ `npm start`
-- The default browser in your React environment, `http://localhost:3000/`
+- The default browser in your React environment, 
+    - `http://localhost:3000/`
+
+- Why is the React website's content empty? To populate the React frontend data, you'll need to run the dev server at the same time under a second terminal bash window, cd server, then  `npm start` and populate the tables through a GraphQL query.
+
+- Here is a walkthrough of the application showing both the React /client and GraphQL /server started and connecting through the Apollo server\client and Express.js:
+https://drive.google.com/file/d/1K3YQd_e1wYWERb5So4wgaccVD6zOiQZK/view
 
 - Here are the client side dependencies as seen under /client/package.json
 
@@ -161,8 +165,8 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 ## Testing
 
-
-
+Development server is running under the server directory, React under the client directory. To test for the client, run both servers, cd to each directory, then enter `npm start` in bash.
+See Usage, under client or server for further information and detail.
 
 ## Contribution
 
