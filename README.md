@@ -147,8 +147,11 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 - Why is the React website's content empty? To populate the React frontend data, you'll need to run the dev server at the same time under a second terminal bash window, cd server, then  `npm start` and populate the tables through a GraphQL query.
 
-- Here is a walkthrough of the application showing both the React /client and GraphQL /server started and connecting through the Apollo server\client and Express.js:
+- Here is a walkthrough of the application running on the localhost and development server, showing both the React /client and GraphQL /server started and connecting through the Apollo server\client and Express.js:
 https://drive.google.com/file/d/1K3YQd_e1wYWERb5So4wgaccVD6zOiQZK/view
+
+- The two servers through localhost, two different ports,
+![React And Graphql](./ReactAndQueryQL.jpg "React And Graphql")
 
 - Here are the client side dependencies as seen under /client/package.json
 
