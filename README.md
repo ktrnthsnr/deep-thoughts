@@ -158,6 +158,15 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
       }
 ```
 
+### Third server installations 
+
+- From the root, created a third application to control the client and server applications.
+- $ `npm init -y`
+- Also installed
+-  if-env library (used through package.json not JavaScript) `npm install if-env`
+-  concurrently library as a dependency for development environment only `npm install -D concurrently`
+
+
 ## Testing
 
 - To test via the GraphQL, update the /client/src/App.js connection to the development server, and comment out the prod server reference.
