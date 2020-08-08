@@ -8,10 +8,15 @@ import Home from './pages/Home';
   import { ApolloProvider } from '@apollo/react-hooks';
   import ApolloClient from 'apollo-boost';
 
-  // new -- establish connection to backend server's graphql's endpoint
+  // production connection 
   const client = new ApolloClient({
-    uri: 'http://localhost:3001/graphql'
+    uri: '/graphql'
   });
+
+  // -- development connection; new -- establish connection to backend server's graphql's endpoint
+      // const client = new ApolloClient({
+      //   uri: 'http://localhost:3001/graphql'
+      // });
 
   // -- new app function
   function App() {

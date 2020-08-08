@@ -99,7 +99,7 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 
 
 ### Website
-- The website has been deployed to GitHub.
+- The website has been deployed to GitHub to a production environment.
 	![insert](./insert.jpg "insert")
 
 ### Local install, seed and usage 
@@ -145,14 +145,6 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 - The default browser in your React environment, 
     - `http://localhost:3000/`
 
-- Why is the React website's content empty? To populate the React frontend data, you'll need to run the dev server at the same time under a second terminal bash window, cd server, then  `npm start` and populate the tables through a GraphQL query.
-
-- Here is a walkthrough of the application running on the localhost and development server, showing both the React /client and GraphQL /server started and connecting through the Apollo server\client and Express.js:
-https://drive.google.com/file/d/1K3YQd_e1wYWERb5So4wgaccVD6zOiQZK/view
-
-- The two servers through localhost, two different ports,
-![React And Graphql](./ReactAndQueryQL.jpg "React And Graphql")
-
 - Here are the client side dependencies as seen under /client/package.json
 
 ```
@@ -168,8 +160,45 @@ https://drive.google.com/file/d/1K3YQd_e1wYWERb5So4wgaccVD6zOiQZK/view
 
 ## Testing
 
-The development server is running under the server directory, React under the client directory. To test for the client, run both servers, cd to each directory, then enter `npm start` in bash.
-See Usage, under client or server for further information and detail.
+- To test via the GraphQL, update the /client/src/App.js connection to the development server, and comment out the prod server reference.
+
+    ```
+    // development connection; 
+    const client = new ApolloClient({
+      uri: 'http://localhost:3001/graphql'
+    });
+    ```
+
+- The development server will then run under the /server directory, React development under the /client directory. To test for the client, run both servers, cd to each directory, then enter `npm start` in two separate bash windows.
+
+For example, on the client,
+- The React app client starts up by running from the client directory
+    - $ `cd client`
+    - $ `npm i` or `npm install`
+    - $ `npm start`
+- The default browser in your React environment, 
+    - `http://localhost:3000/`
+
+For example, on the server,
+- To view the site locally on the development server, first install the npm packages
+    - $ `npm i` or `npm install`
+- Then seed the data
+    - $ `npm run seed`
+- Start the MongoDB
+    - $ `mongod`
+- To test the Apollo server sider connections to the Express.js, (to test the schemas and server.js), run the following 
+    - $ `cd server`
+    - $ `npm run watch`
+- Use GraphQL Playground server environment, view locally at 
+- $ `http://localhost:3001/graphql`
+
+- Why is the React website's content empty? To populate the React frontend data, you'll need to run the dev server at the same time under a second terminal bash window, cd server, then  `npm start` and populate the tables through a GraphQL query `http://localhost:3001/graphql`. See Usage, under client or server for further information and detail.  Update: with the package.json proxy addition, "proxy": "http://localhost:3001", the site can by accessed via /graphql.
+
+- Here is a walkthrough of the application running on the localhost and development server, showing both the React /client and GraphQL /server started and connecting through the Apollo server\client and Express.js:
+https://drive.google.com/file/d/1K3YQd_e1wYWERb5So4wgaccVD6zOiQZK/view
+
+- The two servers through localhost, two different ports,
+![React And Graphql](./ReactAndQueryQL.jpg "React And Graphql")
 
 ## Contribution
 
