@@ -3,6 +3,7 @@ import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 // import { QUERY_THOUGHTS } from '../utils/queries';
 import ThoughtList from '../components/ThoughtList';
+import ThoughtForm from '../components/ThoughtForm';
 import FriendList from '../components/FriendList';
 
 // new -- add JSON web token (JWT)
