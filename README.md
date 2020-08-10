@@ -7,7 +7,7 @@ Socal media discussion website created using web development tools relating to t
 * https://github.com/ktrnthsnr/deep-thoughts
 
 ## React Website in Heroku
-
+https://ktrnthsnr-deep-thoughts.herokuapp.com/
 
 ## Table of Contents
 
