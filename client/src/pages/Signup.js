@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 
+// new -- importing mutations, hooks to connect signup and login mutations from utils
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_USER } from '../utils/mutations';
+
+// capture form field data and store in a state using useState() hook
 const Signup = () => {
+  // declare formState
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+
+  // new -- add the mutation
+  const [addUser, { error }] = useMutation(ADD_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -13,10 +22,29 @@ const Signup = () => {
     });
   };
 
-  // submit form
-  const handleFormSubmit = async (event) => {
+// new -- added function detail
+  // submit form (notice the async!)
+  const handleFormSubmit = async event => {
     event.preventDefault();
+
+    // use try/catch instead of promises to handle errors
+    try {
+      // execute addUser mutation and pass in variable data from the form state object as variables for the mutation function
+      const { data } = await addUser({
+        variables: { ...formState }
+      });
+      console.log(data);
+    } catch (e) {
+      console.error(e);
+    }
   };
+
+
+  // // remove -- submit form - placeholder
+      // const handleFormSubmit = async (event) => {
+      //   event.preventDefault();
+      // };
+
 
   return (
     <main className='flex-row justify-center mb-4'>
@@ -55,6 +83,7 @@ const Signup = () => {
               <button className='btn d-block w-100' type='submit'>
                 Submit
               </button>
+              {error && <div>Sign up failed</div>}
             </form>
           </div>
         </div>
