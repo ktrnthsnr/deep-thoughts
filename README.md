@@ -4,9 +4,10 @@ Socal media discussion website created using web development tools relating to t
 
 ## GitHub URL
 
-* https://github.com/ktrnthsnr/deep-thoughts
+https://github.com/ktrnthsnr/deep-thoughts
 
 ## React Website in Heroku
+
 https://ktrnthsnr-deep-thoughts.herokuapp.com/
 
 ## Table of Contents
@@ -101,6 +102,26 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 ### Website
 - The website has been deployed to GitHub to a production environment.
 	![insert](./insert.jpg "insert")
+
+- The Heroko app runs `npm start` which starts these actions on the mLab Heroku add-on:
+
+    1. Starts the Express.js server with nodemon, running on port 3001.
+    2. Starts the Create React App server, running on port 3000.    
+
+- The production connection config is located at the server directory, /config/connection.js.
+- The prod process.env config serving up a compiled Node.js server and assets is located under the root server.js file.
+- Start scripts in root package.json were updated as follows, 
+
+    ```
+    "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "heroku-postbuild": "cd client && npm run build"
+    },
+    ```
 
 ### Local install, seed and usage 
 

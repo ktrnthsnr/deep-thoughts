@@ -24,7 +24,7 @@ server.applyMiddleware({ app });
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// -- new:   production setup - Serve up static assets
+// -- new:   production setup - Served up (compiled) a static Node.js server and assets
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
