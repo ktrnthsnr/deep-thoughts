@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 
+// new -- importing login user mutation and apollo\react hooks
+import { useMutation } from '@apollo/react-hooks';
+import { LOGIN_USER } from '../utils/mutations';
+
+// Login component definition
 const Login = (props) => {
+  //  useState() statement 
   const [formState, setFormState] = useState({ email: '', password: '' });
+
+  // new --  initialize our LOGIN_USER mutation with the useMutation() Hook 
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -13,16 +22,34 @@ const Login = (props) => {
     });
   };
 
-  // submit form
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
 
-    // clear form values
-    setFormState({
-      email: '',
-      password: '',
+// new - handleFormSubmit function 
+  // submit form
+const handleFormSubmit = async event => {
+  event.preventDefault();
+
+  try {
+    const { data } = await login({
+      variables: { ...formState }
     });
-  };
+
+    console.log(data);
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+  // previous - placeholder
+      // // submit form
+      // const handleFormSubmit = async (event) => {
+      //   event.preventDefault();
+
+      //   // clear form values
+      //   setFormState({
+      //     email: '',
+      //     password: '',
+      //   });
+      // };
 
   return (
     <main className='flex-row justify-center mb-4'>
@@ -52,7 +79,7 @@ const Login = (props) => {
               <button className='btn d-block w-100' type='submit'>
                 Submit
               </button>
-              {/* {error && <div>Sign up failed</div>} */}
+              {error && <div>Sign up failed</div>}
             </form>
           </div>
         </div>
