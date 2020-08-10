@@ -1,7 +1,8 @@
 import React from 'react';
 
-// new -- import from the new component ReactionList
+// new -- import from the new components
 import ReactionList from '../components/ReactionList';
+import ReactionForm from '../components/ReactionForm';
 
 // new -- import the React hook, to access ID from the URL
 import { useParams } from 'react-router-dom';
@@ -9,6 +10,9 @@ import { useParams } from 'react-router-dom';
 // new -- useQuery hook to import from utils/queries
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_THOUGHT } from '../utils/queries';
+
+// new -- adding JSON Web Token (JWT) authentication from the utils auth.js, for adding Reaction component
+import Auth from '../utils/auth';
 
 const SingleThought = props => {
 
@@ -44,6 +48,9 @@ const SingleThought = props => {
           </div>
           {thought.reactionCount > 0 && <ReactionList reactions={thought.reactions} />}
         </div>
+
+              {Auth.loggedIn() && <ReactionForm thoughtId={thought._id} />}
+
     </div>
     );
   };
