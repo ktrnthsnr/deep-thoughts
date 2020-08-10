@@ -100,14 +100,13 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
 ## Usage
 
 ### Website
-- The website has been deployed to GitHub to a production environment.
-	![insert](./insert.jpg "insert")
+- The website has been deployed to a Heroku app containing an mLab MongoDB add on, to deploy to a production-like environment.
+- `https://ktrnthsnr-deep-thoughts.herokuapp.com/`
 
-- The Heroko app runs `npm start` which starts these actions on the mLab Heroku add-on:
+-	![deep-thoughts](./deep-thoughts.jpg "deep-thoughts")
 
-    1. Starts the Express.js server with nodemon, running on port 3001.
-    2. Starts the Create React App server, running on port 3000.    
-
+#### Heroko related script
+- Create a Heroku app from the bash terminal `heroku create ktrnthsnr/deep-thoughts`
 - The production connection config is located at the server directory, /config/connection.js.
 - The prod process.env config serving up a compiled Node.js server and assets is located under the root server.js file.
 - Start scripts in root package.json were updated as follows, 
@@ -122,6 +121,12 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
     "heroku-postbuild": "cd client && npm run build"
     },
     ```
+- Run a Heroku build `heroku run npm run seed`
+- Push to production `git push heroku master`
+- The Heroko app runs `npm start` which starts these actions on the mLab Heroku add-on:
+
+    1. Starts the Express.js server with nodemon, running on port 3001.
+    2. Starts the Create React App server, running on port 3000.   
 
 ### Local install, seed and usage 
 
