@@ -6,6 +6,7 @@ import { Redirect, useParams } from 'react-router-dom';
 // new -- importing components, and user queries from utils, and JWT authentication utility
 // import { useParams } from 'react-router-dom';
 import ThoughtList from '../components/ThoughtList';
+import ThoughtForm from '../components/ThoughtForm';
 // import { useQuery } from '@apollo/react-hooks';
 // import { QUERY_USER } from '../utils/queries';
 import FriendList from '../components/FriendList';
@@ -68,7 +69,6 @@ const Profile = () => {
         return (
           <div>
             <div className="flex-row justify-space-between mb-3">
-
                 <div className="flex-row mb-3">
                   <h2 className="bg-dark text-secondary p-3 display-inline-block">
                     Viewing {userParam ? `${user.username}'s` : 'your'} profile.
@@ -90,9 +90,9 @@ const Profile = () => {
                       friendCount={user.friendCount}
                       friends={user.friends}
                     />
-                  </div>
-                  
+                  </div>                  
             </div>
+            <div className="mb-3">{!userParam && <ThoughtForm />}</div>
           </div>
         );
 };
