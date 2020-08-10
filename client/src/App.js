@@ -19,10 +19,26 @@ import Signup from './pages/Signup';
   import { ApolloProvider } from '@apollo/react-hooks';
   import ApolloClient from 'apollo-boost';
 
-  // production connection 
-  const client = new ApolloClient({
-    uri: '/graphql'
-  });
+// new -- instruct Apollo instance to retrieve token every time a GraphQL request is make
+const client = new ApolloClient({
+  request: operation => {
+    const token = localStorage.getItem('id_token');
+
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : ''
+      }
+    });
+  },
+  uri: '/graphql'
+});
+
+
+
+  // prev--  production connection 
+      // const client = new ApolloClient({
+      //   uri: '/graphql'
+      // });
 
   // -- development connection; new -- establish connection to backend server's graphql's endpoint
       // const client = new ApolloClient({

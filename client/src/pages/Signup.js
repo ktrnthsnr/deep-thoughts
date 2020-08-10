@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_USER } from '../utils/mutations';
 
+// new -- adding JSON Web Token (JWT) authentication from the utils auth.js
+import Auth from '../utils/auth';
+
 // capture form field data and store in a state using useState() hook
 const Signup = () => {
   // declare formState
@@ -33,7 +36,11 @@ const Signup = () => {
       const { data } = await addUser({
         variables: { ...formState }
       });
-      console.log(data);
+      // new -- added JSON Web Token (JWT)
+      Auth.login(data.addUser.token);
+
+      // console.log(data);
+
     } catch (e) {
       console.error(e);
     }

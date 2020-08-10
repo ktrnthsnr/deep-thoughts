@@ -68,7 +68,6 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
         - $ `cd client`
         - $ `npx create-react-app .` 
         - (New installs without repo cloning, run $ `npx create-react-app client`)
-
   - Installed additional dependent npm packages
     - apollo-boost `npm i apollo-boost graphql graphql-tag @apollo/react-hooks` 
         - This installs the required packages for Apollo and GraphSQL in React on the client side:
@@ -76,14 +75,14 @@ Node.js, JavaScript, ES6, npm MongoDB, Mongoose, Express.js, React.js, GraphQL, 
             - graphql-tag (formats GraphQL queries)
             - @apollo/apollo-hooks (executes GraphQL queries as React Hooks)
             - graphql
-
     - react-router-dom `npm i react-router-dom`
+    - for JSON Token authentication within the client, installed jwt-decode `npm i jwt-decode`
 
     - jest-dom `npm install @testing-library/react @testing-library/jest-dom --save-dev`
     - bootstrap `npm i bootstrap`
     - popper  `npm i popper.js`
     - jQuery `npm i jquery`
-    - jwt-decode `npm i jwt-decode`
+    
     - react-bootstrap `npm i react-bootstrap`
     - react-dom `npm i react-dom`
 
@@ -237,7 +236,7 @@ For example, on the server,
 https://drive.google.com/file/d/1K3YQd_e1wYWERb5So4wgaccVD6zOiQZK/view
 
 - The two servers through localhost, two different ports,
-![React And Graphql](./ReactAndQueryQL.jpg "React And Graphql")
+![React And Graphql](./img/ReactAndQueryQL.jpg "React And Graphql")
 
 ## Contribution
 
