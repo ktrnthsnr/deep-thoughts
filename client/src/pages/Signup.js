@@ -19,6 +19,9 @@ const Signup = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
+      console.log(formState);
+      console.log(name);
+
     setFormState({
       ...formState,
       [name]: value,
@@ -29,6 +32,9 @@ const Signup = () => {
   // submit form (notice the async!)
   const handleFormSubmit = async event => {
     event.preventDefault();
+
+    console.log(formState);
+
 
     // use try/catch instead of promises to handle errors
     try {
