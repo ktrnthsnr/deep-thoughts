@@ -20,7 +20,7 @@ const resolvers = {
         
           throw new AuthenticationError('Not logged in');
         },
-
+        
         // get all users
         users: async () => {
           return User.find()
@@ -30,25 +30,29 @@ const resolvers = {
         },
 
         // // get a user by username
-        // user: async (parent, { username }) => {
-        //   return User.findOne({ username })
-        //     .select('-__v -password')
-        //     .populate('friends')
-        //     .populate('thoughts');
-        // },
+        user: async (parent, { username }) => {
+          return User.findOne({ username })
+            .select('-__v -password')
+            .populate('friends')
+            .populate('thoughts');
+        
         
 
         // thoughts: async () => {
         //   return Thought.find().sort({ createdAt: -1 });
 
-        thoughts: async (parent, { username }) => {
+       thoughts: async (parent, { username }) => {
           const params = username ? { username } : {};
           return Thought.find(params).sort({ createdAt: -1 });
         },
 
+        
+        
         thought: async (parent, { _id }) => {
           return Thought.findOne({ _id });
-        }
+        },
+       
+     }
     },
 
     // mutation object, the Mongoose User model creates a new user in the db with args values
@@ -59,7 +63,7 @@ const resolvers = {
         const user = await User.create(args);
         const token = signToken(user);
       
-        return { user, token }; // fixed, thanks!
+        return { token, user }; // fixed, thanks!
       },
 
       login: async (parent, { email, password }) => {
@@ -76,10 +80,10 @@ const resolvers = {
         }
 
         const token = signToken(user);
-        return user;
+        return { token, user }; // fixed!
       },
 
-      //methods created after adding JWT, 
+      // -- methods created after adding JWT, 
       
       // only logged in users w/ a token should be able to access this mutation 
       addThought: async (parent, args, context) => {
@@ -90,11 +94,9 @@ const resolvers = {
             { _id: context.user._id },
             { $push: { thoughts: thought._id } },
             { new: true }
-          );
-      
+          );      
           return thought;
-        }
-      
+        }      
         throw new AuthenticationError('You need to be logged in!');
       },
     
@@ -105,11 +107,9 @@ const resolvers = {
             { _id: thoughtId },
             { $push: { reactions: { reactionBody, username: context.user.username } } },
             { new: true, runValidators: true }
-          );
-      
+          );      
           return updatedThought;
-        }
-      
+        }      
         throw new AuthenticationError('You need to be logged in!');
       },
     

@@ -1,15 +1,13 @@
 import React from 'react';
 // new -- import the apollo hooks
 import { useQuery } from '@apollo/react-hooks';
-// import { QUERY_THOUGHTS } from '../utils/queries';
 import ThoughtList from '../components/ThoughtList';
 import ThoughtForm from '../components/ThoughtForm';
 import FriendList from '../components/FriendList';
-
 // new -- add JSON web token (JWT)
 import Auth from '../utils/auth';
 // new -- import queries
-import { QUERY_THOUGHTS, QUERY_ME_BASIC } from '../utils/queries';
+import { QUERY_THOUGHTS, QUERY_ME_BASIC} from '../utils/queries';
 
 
 const Home = () => {
@@ -20,10 +18,10 @@ const Home = () => {
 
    // -- optional chaining syntax, if data exists store in the thought constant, if not store in empty array
   const thoughts = data?.thoughts || []; 
-  console.log(thoughts);
+  // console.log(thoughts);
     // removed -- test on both client & server - 
       // cd client, npm start localhost:3000; 
-      // cd server, npm run watch (localhost:3001/graphql)
+ 
 
   const loggedIn = Auth.loggedIn();
 
@@ -58,14 +56,5 @@ const Home = () => {
   );
 };
 
-// const Home = () => {
-//   return (
-//     <main>
-//       <div className='flex-row justify-space-between'>
-//         <div className='col-12 mb-3'>{/* PRINT THOUGHT LIST */}</div>
-//       </div>
-//     </main>
-//   );
-// };
 
 export default Home;
