@@ -21,6 +21,17 @@ const resolvers = {
           throw new AuthenticationError('Not logged in');
         },
         
+        // Important: ordering these is important. These thought resolver queries must go Before the async users (with throughts)
+        thoughts: async (parent, { username }) => {
+          const params = username ? { username } : {};
+          return Thought.find(params).sort({ createdAt: -1 });
+        },
+      
+            thought: async (parent, { _id }) => {
+              return Thought.findOne({ _id });
+            },
+
+
         // get all users
         users: async () => {
           return User.find()
@@ -41,16 +52,7 @@ const resolvers = {
         // thoughts: async () => {
         //   return Thought.find().sort({ createdAt: -1 });
 
-       thoughts: async (parent, { username }) => {
-          const params = username ? { username } : {};
-          return Thought.find(params).sort({ createdAt: -1 });
-        },
-
-        
-        
-        thought: async (parent, { _id }) => {
-          return Thought.findOne({ _id });
-        },
+       
        
      }
     },
@@ -63,7 +65,7 @@ const resolvers = {
         const user = await User.create(args);
         const token = signToken(user);
       
-        return { token, user }; // fixed, thanks!
+        return { token, user }; 
       },
 
       login: async (parent, { email, password }) => {
@@ -80,7 +82,7 @@ const resolvers = {
         }
 
         const token = signToken(user);
-        return { token, user }; // fixed!
+        return { token, user }; 
       },
 
       // -- methods created after adding JWT, 
