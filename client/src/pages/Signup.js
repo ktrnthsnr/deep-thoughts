@@ -19,13 +19,10 @@ const Signup = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-      console.log(formState);
-      console.log(name);
+      // console.log(formState);
+      // console.log(name);
 
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+    setFormState({ ...formState, [name]: value, });
   };
 
 // new -- added function detail
@@ -33,7 +30,7 @@ const Signup = () => {
   const handleFormSubmit = async event => {
     event.preventDefault();
 
-    console.log(formState);
+    // console.log(formState);
 
 
     // use try/catch instead of promises to handle errors
