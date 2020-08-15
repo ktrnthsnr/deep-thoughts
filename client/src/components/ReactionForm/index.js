@@ -8,7 +8,7 @@ const ReactionForm = ({ thoughtId }) => {
 
     const [reactionBody, setBody] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
-    const [addReaction, {error}] = useMutation(ADD_REACTION);
+    //const [addReaction, {error}] = useMutation(ADD_REACTION);
 
     const handleChange = event => {
         if (event.target.value.length <= 280) {
@@ -25,7 +25,8 @@ const ReactionForm = ({ thoughtId }) => {
 
     const handleFormSubmit = async event => {
         event.preventDefault();
-
+        setBody('');
+        setCharacterCount(0);
         try {
 
             await addReaction({
@@ -39,10 +40,10 @@ const ReactionForm = ({ thoughtId }) => {
             console.error(e);
         }
 
-        setBody('');
-        setCharacterCount(0);
-    }
-
+        //setBody('');
+        //setCharacterCount(0);
+    };
+    const [addReaction, { error }] = useMutation(ADD_REACTION);
 
   return (
     <div>
@@ -54,6 +55,8 @@ const ReactionForm = ({ thoughtId }) => {
         <textarea
           placeholder="Leave a reaction to this thought..."
           className="form-input col-12 col-md-9"
+          onChange={handleChange}
+          value={reactionBody}
         ></textarea>
 
         <button className="btn col-12 col-md-3" type="submit">

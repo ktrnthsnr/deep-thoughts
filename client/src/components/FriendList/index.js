@@ -1,5 +1,7 @@
  // new component, exporting to profile.js page
 import React from 'react';
+
+// new-- Link React Router replaces the <a href="/login"> elements, stops page refresh to keep single-page quickness
 import { Link } from 'react-router-dom';
 
 const FriendList = ({ friendCount, username, friends }) => {

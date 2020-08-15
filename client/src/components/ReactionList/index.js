@@ -1,6 +1,8 @@
 // new -- added new ReactionList component, will be imported by SingleThought.js page
 
 import React from 'react';
+
+// new-- Link React Router replaces the <a href="/login"> elements, stops page refresh to keep single-page quickness
 import { Link } from 'react-router-dom';
 
 const ReactionList = ({ reactions }) => {
